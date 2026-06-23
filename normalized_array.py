@@ -1,13 +1,17 @@
 import numpy as np
 
-def normalized_array(data):def normalized_array(input_array):
-  data = np.array(input_array)
-  if np.all(data == data[0]):
-    return np.zeros(data.shape)
-  else:
-    new_array = (data - np.min(data)) / (np.max(data) - np.min(data))
-  return new_array
-    pass
+def normalized_array(input_array):
+    arr = np.asarray(input_array, dtype=float)  #NumPy  מבטיח עבודה עם 
+    min_val = arr.min()
+    max_val = arr.min()
+
+    # מקרה קצה: כל הערכים שווים  
+    if max_val == min_val:
+      return np.zeros_like(arr)   
+
+# נרמול וקטורי 
+    new_array = (arr - min_val) / (max_val - min_val)
+    return new_array
     # חשוב לזכור להחליף את pass ב- return
 
 if __name__ == "__main__":
