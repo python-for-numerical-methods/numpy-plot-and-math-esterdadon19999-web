@@ -1,7 +1,7 @@
 import numpy as np
 
 def normalized_array(input_array):
-    arr = np.asarray(input_array, dtype=float)  #NumPy  מבטיח עבודה עם 
+    arr = np.asarray(input_array, dtype=float) 
     min_val = arr.min()
     max_val = arr.min()
 
